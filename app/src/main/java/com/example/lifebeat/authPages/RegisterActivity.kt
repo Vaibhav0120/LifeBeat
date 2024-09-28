@@ -78,7 +78,7 @@ class RegisterActivity : AppCompatActivity() {
 
                     // Create a user object
                     val user = hashMapOf(
-                        "Name" to username,
+                        "Username" to username,
                         "Email" to email
                     )
 

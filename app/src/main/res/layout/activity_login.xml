@@ -43,7 +43,7 @@
                 android:background="@drawable/lavender_border"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Username"
+                android:hint="Email or Username"
                 android:drawableLeft="@drawable/person"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
