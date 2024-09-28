@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "725179759988",
+    "project_id": "lifebeat-f2897",
+    "storage_bucket": "lifebeat-f2897.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725179759988:android:8ecaf79488c07b49e0c021",
+        "android_client_info": {
+          "package_name": "com.example.lifebeat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZC2tNY_KaCiaH464GhCuIMuUX1AAcp5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

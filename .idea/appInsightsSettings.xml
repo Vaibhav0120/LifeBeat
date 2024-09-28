@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.lifebeat" />
+                  <option name="mobileSdkAppId" value="1:725179759988:android:8ecaf79488c07b49e0c021" />
+                  <option name="projectId" value="lifebeat-f2897" />
+                  <option name="projectNumber" value="725179759988" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
