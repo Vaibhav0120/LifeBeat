@@ -10,4 +10,6 @@
 
     <color name="lavender">#8692f7</color>
     <color name="gray">#acacac</color>
+    <color name="lightPurple">#f0e9fa</color>
+    <color name="darkPurple">#6735a4</color>
 </resources>

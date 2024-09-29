@@ -184,7 +184,7 @@
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycleViewTopDoctors"
+                    android:id="@+id/recyclerViewTopDoctors"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
@@ -203,9 +203,9 @@
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@+id/recycleViewTopDoctors"
-                    app:layout_constraintEnd_toEndOf="@+id/recycleViewTopDoctors"
-                    app:layout_constraintStart_toStartOf="@+id/recycleViewTopDoctors"
+                    app:layout_constraintBottom_toBottomOf="@+id/recyclerViewTopDoctors"
+                    app:layout_constraintEnd_toEndOf="@+id/recyclerViewTopDoctors"
+                    app:layout_constraintStart_toStartOf="@+id/recyclerViewTopDoctors"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
