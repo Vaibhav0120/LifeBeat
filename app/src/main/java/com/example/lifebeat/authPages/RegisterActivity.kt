@@ -136,7 +136,9 @@ class RegisterActivity : AppCompatActivity() {
                     // Create a user object
                     val user = hashMapOf(
                         "Username" to username,
-                        "Email" to email
+                        "Email" to email,
+                        "isGuest" to false, // Set isGuest to false
+                        "HealthInfo" to false // Set HealthInfo to false
                     )
 
                     // Store user details in Firestore

@@ -119,5 +119,15 @@
         android:textStyle="bold"
         android:textSize="15sp"/>
 
+    <TextView
+        android:id="@+id/GuestLogin"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guest Login"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
 
 </LinearLayout>

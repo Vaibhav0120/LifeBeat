@@ -16,7 +16,6 @@ class LandingPage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_landing_page)
 
         // Initialize Firebase Auth
@@ -39,20 +38,14 @@ class LandingPage : AppCompatActivity() {
         }
 
         // Initialize buttons
-        val loginButton: Button = findViewById(R.id.loginButton)
-        val registerButton: Button = findViewById(R.id.registerButton)
+        val startBtn: Button = findViewById(R.id.startBtn)
 
         // Set click listeners for buttons
-        loginButton.setOnClickListener {
+        startBtn.setOnClickListener {
             // Navigate to LoginActivity
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        registerButton.setOnClickListener {
-            // Navigate to RegisterActivity
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

@@ -23,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var loginToRegister: TextView
+    private lateinit var guestLogin: TextView // Added for guest login
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +36,15 @@ class LoginActivity : AppCompatActivity() {
         passwordEditText = findViewById(R.id.password)
         loginButton = findViewById(R.id.loginButton)
         loginToRegister = findViewById(R.id.loginToRegister)
+        guestLogin = findViewById(R.id.GuestLogin) // Initialize guest login TextView
 
         loginToRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+        }
+
+        guestLogin.setOnClickListener {
+            loginAsGuest() // Call guest login method when clicked
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -64,7 +70,6 @@ class LoginActivity : AppCompatActivity() {
         if (isEmail(usernameOrEmail)) {
             authenticateWithEmail(usernameOrEmail, password)
         } else {
-            // Attempt to authenticate with username
             authenticateWithUsername(usernameOrEmail, password)
         }
     }
@@ -82,7 +87,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun authenticateWithUsername(username: String, password: String) {
-        // Query to find the user document by username
         firestore.collection("User")
             .whereEqualTo("Username", username)
             .get()
@@ -94,7 +98,6 @@ class LoginActivity : AppCompatActivity() {
                 for (document in documents) {
                     val email = document.getString("Email")
                     if (email != null) {
-                        // Now authenticate with the email and password
                         authenticateWithEmail(email, password)
                     } else {
                         Toast.makeText(this, "Email not found for this username", Toast.LENGTH_SHORT).show()
@@ -104,6 +107,40 @@ class LoginActivity : AppCompatActivity() {
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error retrieving users: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun loginAsGuest() {
+        // Create a new user document in Firestore for the guest
+        val guestUsername = "Guest User"
+        val guestEmail = "guest_${System.currentTimeMillis()}@example.com" // Unique email for each guest
+        auth.createUserWithEmailAndPassword(guestEmail, "password")
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val userId = auth.currentUser?.uid
+                    if (userId != null) {
+                        // Store user details in Firestore
+                        val userData = hashMapOf(
+                            "Username" to guestUsername,
+                            "Email" to guestEmail,
+                            "isGuest" to true,
+                            "HealthInfo" to false
+                        )
+
+                        firestore.collection("User").document(userId).set(userData)
+                            .addOnSuccessListener {
+                                startActivity(Intent(this, MainActivity::class.java))
+                                finish()
+                            }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(this, "Failed to create guest user: ${e.message}", Toast.LENGTH_SHORT).show()
+                            }
+                    } else {
+                        Toast.makeText(this, "Unable to create guest user.", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this, "Failed to create guest user: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
             }
     }
 

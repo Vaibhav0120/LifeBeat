@@ -3,30 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/lavender"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".authPages.LandingPage">
 
 
-    <Button
-        android:id="@+id/loginButton"
+    <ImageView
+        android:id="@+id/Design"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_halo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/intro_women" />
+
+    <TextView
+        android:id="@+id/IntroMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:text="Exceptional Care\n Close to You"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/loginButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/loginButton"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:layout_constraintVertical_bias="0.115" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startBtn"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        style="@android:style/Widget.Button"
+        android:background="@drawable/purple_background"
+        android:text="Get Started"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:drawableEnd="@drawable/white_arrow"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintStart_toStartOf="@+id/IntroMsg"
+        app:layout_constraintTop_toBottomOf="@+id/IntroMsg" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
