@@ -40,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -55,4 +54,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.glide)
+
+    // Google Sign-In
+    // implementation(libs.play.services.auth) // Google
+
+    // Facebook Sign-In
+    // implementation(libs.facebook.android.sdk) // Facebook
+
+    // Apple Sign-In
+    // implementation("com.apple.android:apple-authentication:1.0.0") // Apple
 }

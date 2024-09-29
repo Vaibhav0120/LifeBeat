@@ -3,6 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Add key to use Facebook Login -->
+    <string name="facebook_app_id">YOUR_FACEBOOK_APP_ID</string>
+
+    <!-- Add key to use Google Login -->
+    <string name="google_app_id">YOUR_GOOGLE_APP_ID</string>
+
+    <!-- Add key to use Apple Login -->
+    <string name="apple_app_id">YOUR_APPLE_APP_ID</string>
 </resources>

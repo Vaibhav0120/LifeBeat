@@ -131,11 +131,11 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="20dp"
-            android:src="@drawable/twitter"/>
+            android:src="@drawable/apple"/>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/alreadyRegistered"
+        android:id="@+id/registerToLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Already Registered? Login Now!"

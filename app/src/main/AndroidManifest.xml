@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Add Internet permission -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,25 +15,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeBeat"
         tools:targetApi="31">
+
+        <!-- RegisterActivity -->
         <activity
             android:name=".authPages.RegisterActivity"
             android:exported="false" />
+
+        <!-- LoginActivity -->
         <activity
             android:name=".authPages.LoginActivity"
             android:exported="false" />
+
+        <!-- LandingPage - Main entry point for app -->
         <activity
             android:name=".authPages.LandingPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
+
+        <!-- Required permissions for Facebook login -->
+        <!-- Facebook Configuration
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationName"
+            android:value="@string/app_name"/> -->
+
+        <!-- Required permissions for Google login -->
+        <!-- <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/google_app_id"/> -->
+
+        <!-- Required permissions for Apple login -->
+        <!-- <meta-data
+            android:name="com.apple.sdk.ApplicationId"
+            android:value="@string/apple_app_id"/> -->
+
     </application>
 
 </manifest>
