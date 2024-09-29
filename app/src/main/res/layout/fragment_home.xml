@@ -19,7 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="48dp"
+
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:orientation="horizontal">
@@ -75,7 +75,7 @@
                 <EditText
                     android:id="@+id/editTextText"
                     android:layout_width="0dp"
-                    android:layout_height="45dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:ems="10"

@@ -14,16 +14,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Hide the title bar before setting the content view
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
 
         super.onCreate(savedInstanceState)
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        supportActionBar?.hide()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Hide the action bar if it exists
-        supportActionBar?.hide()
+        // Hide the title bar before setting the content view
 
         val navView: BottomNavigationView = binding.navView
 
