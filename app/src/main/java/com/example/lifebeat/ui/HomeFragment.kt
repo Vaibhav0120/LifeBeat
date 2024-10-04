@@ -1,4 +1,4 @@
-package com.example.lifebeat.ui.home
+package com.example.lifebeat.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
