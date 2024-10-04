@@ -27,7 +27,7 @@
                     android:id="@+id/constraintLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="500dp"
-                    android:background="@color/purple_200"
+                    android:background="@color/lavender"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -223,7 +223,7 @@
                                     android:textColor="@color/black" />
 
                                 <TextView
-                                    android:id="@+id/RatingTxt"
+                                    android:id="@+id/ratingTxt"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
@@ -322,7 +322,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:id="@+id/CallBtn"
+                                android:id="@+id/callBtn"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.2"
