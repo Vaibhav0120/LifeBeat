@@ -1,5 +1,6 @@
 package com.example.lifebeat.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.example.lifebeat.Adapter.CategoryAdapter
 import com.example.lifebeat.Adapter.TopDoctorAdapter
 import com.example.lifebeat.ViewModel.MainViewModel
 import com.example.lifebeat.databinding.FragmentHomeBinding
+import com.example.lifebeat.ui.DocListActivity
 
 class HomeFragment : Fragment() {
 
@@ -28,9 +30,15 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        // Initialize category list and set up observer
+        // Initialize category list and top doctors
         initCategory()
         initTopDoctors()
+
+        // Move the OnClickListener for seeAllDocList here
+        binding.seeAllDocList.setOnClickListener {
+            val intent = Intent(requireContext(), DocListActivity::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
     }
@@ -40,7 +48,7 @@ class HomeFragment : Fragment() {
             progressBarTopDoctors.visibility = View.VISIBLE
             viewModel.doctors.observe(viewLifecycleOwner, Observer { doctorList ->
                 recyclerViewTopDoctors.layoutManager = LinearLayoutManager(
-                    requireContext(), // Fixed context here
+                    requireContext(),
                     LinearLayoutManager.HORIZONTAL,
                     false
                 )
@@ -55,7 +63,7 @@ class HomeFragment : Fragment() {
         binding.progressBarCategory.visibility = View.VISIBLE
         viewModel.category.observe(viewLifecycleOwner, Observer { categoryList ->
             binding.viewCategory.layoutManager = LinearLayoutManager(
-                requireContext(), // Use requireContext() here as well
+                requireContext(),
                 LinearLayoutManager.HORIZONTAL,
                 false
             )

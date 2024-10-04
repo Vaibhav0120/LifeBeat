@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/light_purple_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/doctor" />
+
+        <TextView
+            android:id="@+id/degreeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/light_purple_bg_full_corner"
+            android:drawableStart="@drawable/tick"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Title"
+            android:textColor="@color/darkPurple"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/degreeTxt"
+            app:layout_constraintTop_toBottomOf="@+id/degreeTxt" />
+
+        <TextView
+            android:id="@+id/specialTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Special"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/nameTxt"
+            app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:progress="5"
+            android:progressTint="#fcc106"
+            android:rating="4"
+            app:layout_constraintBottom_toBottomOf="@+id/img"
+            app:layout_constraintStart_toStartOf="@+id/specialTxt" />
+
+        <TextView
+            android:id="@+id/scoreTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="4"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+            app:layout_constraintStart_toEndOf="@+id/ratingBar"
+            app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/makeBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/purple_button_stroke"
+            android:text="Make Appointment"
+            android:textColor="@color/darkPurple"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img" />
+
+        <ImageView
+            android:id="@+id/favBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fav_bold" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
