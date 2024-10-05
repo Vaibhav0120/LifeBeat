@@ -108,7 +108,7 @@ class ShopFragment : Fragment() {
     }
 
     private fun loadModelFile(): MappedByteBuffer {
-        val fileDescriptor: AssetFileDescriptor = requireActivity().assets.openFd("cancer_detection_model.tflite")
+        val fileDescriptor: AssetFileDescriptor = requireActivity().assets.openFd("cancer_detection.tflite")
         val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
         val fileChannel: FileChannel = inputStream.channel
         val startOffset: Long = fileDescriptor.startOffset
@@ -151,9 +151,11 @@ class ShopFragment : Fragment() {
 
                 val message: String
                 when (maxIndex) {
-                    0 -> message = String.format("%.2f%% matched - you do not need to worry required", maxProbability * 100-30)
-                    1 -> message = String.format("%.2f%% matched - It is not an emergency but please seek assistance required", maxProbability * 100)
-                    2 -> message = String.format("%.2f%% matched - seek immediate assistance required", maxProbability * 100)
+                    0 -> message = String.format("%.2f%% matched - seek immediate assistance required", maxProbability * 100)
+                    1 -> message = String.format("%.2f%% matched - " +
+                            "" +
+                            " seek assistance required", maxProbability * 100)
+                    2 -> message = String.format("%.2f%% matched - You do not need to worry required ", (maxProbability * 100)-50)
                     else -> message = "Unknown classification"
                 }
 
