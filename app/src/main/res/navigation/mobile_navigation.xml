@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.lifebeat.ui.DashboardFragment"
+        android:name="com.example.lifebeat.ui.ShopFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_shop" />
 
     <fragment
         android:id="@+id/navigation_profile"
