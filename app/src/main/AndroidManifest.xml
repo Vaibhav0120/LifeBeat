@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Add Internet permission -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,33 +15,47 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeBeat"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.ShopActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.DocListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.DetailActivity"
-            android:exported="false" /> <!-- RegisterActivity -->
-        <activity
-            android:name=".authPages.RegisterActivity"
-            android:exported="false" /> <!-- LoginActivity -->
-        <activity
-            android:name=".authPages.LoginActivity"
-            android:exported="false" /> <!-- LandingPage - Main entry point for app -->
+
+        <!-- LandingPage - Main entry point for app -->
         <activity
             android:name=".authPages.LandingPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- MainActivity -->
+        </activity>
+
+        <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+        <!-- LoginActivity -->
+        <activity
+            android:name=".authPages.LoginActivity"
+            android:exported="false" />
+
+        <!-- RegisterActivity -->
+        <activity
+            android:name=".authPages.RegisterActivity"
+            android:exported="false" />
+
+        <!-- DetailActivity -->
+        <activity
+            android:name=".ui.DetailActivity"
+            android:exported="false" />
+
+        <!-- DocListActivity -->
+        <activity
+            android:name=".ui.DocListActivity"
+            android:exported="false" />
+
+        <!-- ShopFragment -->
+        <activity
+            android:name=".ui.ShopFragment"
+            android:exported="false" />
+
     </application>
 
 </manifest>
