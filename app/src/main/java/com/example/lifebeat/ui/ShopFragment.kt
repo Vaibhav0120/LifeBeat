@@ -31,7 +31,7 @@ class ShopFragment : Fragment() {
     private var selectedImageUri: Uri? = null
     private lateinit var patientNameEditText: EditText
     private lateinit var contactNumberEditText: EditText
-    private lateinit var modelOutputTextView: TextView  // Add this line
+    private lateinit var modelOutputTextView: TextView
     private var imageCounter = 0 // Counter to track image selections
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,7 @@ class ShopFragment : Fragment() {
 
         patientNameEditText = view.findViewById(R.id.Patient_name)
         contactNumberEditText = view.findViewById(R.id.Contact_number)
-        modelOutputTextView = view.findViewById(R.id.model_output_text)  // Initialize TextView
+        modelOutputTextView = view.findViewById(R.id.model_output_text)
         val uploadButton: Button = view.findViewById(R.id.upload_button)
 
         uploadButton.setOnClickListener {
@@ -73,14 +73,13 @@ class ShopFragment : Fragment() {
     }
 
     private fun saveDataToFirebase() {
-        val database = FirebaseDatabase.getInstance().reference.child("users") // Navigate to 'users' node
+        val database = FirebaseDatabase.getInstance().reference.child("users")
         val patientName = patientNameEditText.text.toString()
         val contactNumber = contactNumberEditText.text.toString()
 
-        val patientId = "test1" // Static user ID
+        val patientId = "test1"
         val patientData = Patient(patientId, patientName, contactNumber)
 
-        // Save patient data under the static user ID
         database.child(patientId).setValue(patientData)
             .addOnSuccessListener {
                 Toast.makeText(requireContext(), "Data saved successfully", Toast.LENGTH_SHORT).show()
@@ -115,7 +114,7 @@ class ShopFragment : Fragment() {
         val startOffset: Long = fileDescriptor.startOffset
         val declaredLength: Long = fileDescriptor.declaredLength
 
-        Log.d("ShopFragment", "Model file loaded successfully.") // Log model loading
+        Log.d("ShopFragment", "Model file loaded successfully.")
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
     }
 
@@ -139,38 +138,41 @@ class ShopFragment : Fragment() {
 
         if (bitmap != null) {
             val input = preprocessImage(bitmap)
-            val output = Array(1) { FloatArray(1) }  // Adjust this based on your model output
+            val output = Array(1) { FloatArray(3) }  // Adjusted to match the model's output shape
 
             try {
                 Log.d("ShopFragment", "Running inference with input shape: ${input.size} x ${input[0].size} x ${input[0][0].size}")
                 tflite.run(input, output)
 
-                // Assuming output[0][0] gives you a probability between 0 and 1
-                val probability = output[0][0] * 100 // Convert to percentage
-                val message: String
+                // Handle the output probabilities
+                val probabilities = output[0] // Get the probabilities for each class
+                val maxProbability = probabilities.maxOrNull() ?: 0f
+                val maxIndex = probabilities.toList().indexOf(maxProbability) // Convert to List for indexOf
 
-                // Determine the message based on the probability
-                when {
-                    probability >= 50 -> {
-                        message = String.format("%.2f%% matched - please seek consultancy", probability)
-                    }
-                    else -> {
-                        message = "Less than 50% matched - no immediate action needed"
-                    }
+                val message: String
+                when (maxIndex) {
+                    0 -> message = String.format("%.2f%% matched - you do not need to worry required", maxProbability * 100-30)
+                    1 -> message = String.format("%.2f%% matched - It is not an emergency but please seek assistance required", maxProbability * 100)
+                    2 -> message = String.format("%.2f%% matched - seek immediate assistance required", maxProbability * 100)
+                    else -> message = "Unknown classification"
                 }
 
-                Log.d("ShopFragment", "Model output: ${output[0][0]}, Probability: $probability") // Log the output
-                modelOutputTextView.text = message  // Set the TextView text
+                Log.d("ShopFragment", "Model output: ${probabilities.joinToString(", ")}, Max Probability: $maxProbability")
+                modelOutputTextView.text = message
                 Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
-                Log.e("ShopFragment", "Error during inference: ${e.message}")
-                e.printStackTrace() // Print the full stack trace
+                Log.e("ShopFragment", "Error during inference: ${e.message}", e)
                 Toast.makeText(requireContext(), "Inference failed: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         } else {
             Log.e("ShopFragment", "Failed to decode bitmap from input stream")
             Toast.makeText(requireContext(), "Failed to load image", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        tflite.close() // Release TensorFlow Lite resources
     }
 
     companion object {
