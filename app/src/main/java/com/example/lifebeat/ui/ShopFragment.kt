@@ -152,9 +152,7 @@ class ShopFragment : Fragment() {
                 val message: String
                 when (maxIndex) {
                     0 -> message = String.format("%.2f%% matched - seek immediate assistance required", maxProbability * 100)
-                    1 -> message = String.format("%.2f%% matched - " +
-                            "" +
-                            " seek assistance required", maxProbability * 100)
+                    1 -> message = String.format("%.2f%% matched - seek assistance required", maxProbability * 100)
                     2 -> message = String.format("%.2f%% matched - You do not need to worry required ", (maxProbability * 100)-50)
                     else -> message = "Unknown classification"
                 }
