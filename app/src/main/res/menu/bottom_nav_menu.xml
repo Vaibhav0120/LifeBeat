@@ -12,6 +12,11 @@
         android:title="@string/title_dashboard" />
 
     <item
+        android:id="@+id/navigation_tips"
+        android:icon="@drawable/tick"
+        android:title="Tips" />
+
+    <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/btn_4"
         android:title="Profile" />

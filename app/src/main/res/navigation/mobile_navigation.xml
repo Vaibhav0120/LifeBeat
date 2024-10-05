@@ -9,17 +9,35 @@
         android:id="@+id/navigation_home"
         android:name="com.example.lifebeat.ui.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard2"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.lifebeat.ui.ShopFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_shop" />
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_tips"
+            app:destination="@id/navigation_tips" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.lifebeat.ui.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_tips"
+        android:name="com.example.lifebeat.ui.TipsFragment"
+        android:label="Tips"
+        tools:layout="@layout/fragment_tips" >
+        <action
+            android:id="@+id/action_navigation_tips_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
 </navigation>

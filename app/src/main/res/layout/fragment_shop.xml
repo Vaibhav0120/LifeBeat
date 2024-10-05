@@ -71,6 +71,13 @@
                 android:backgroundTint="@color/lavender"
                 app:cornerRadius = "20dp"/>
 
+            <TextView
+                android:id="@+id/model_output_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model Output will be displayed here"
+                android:layout_marginTop="16dp"/>
+
 
         </LinearLayout>
 

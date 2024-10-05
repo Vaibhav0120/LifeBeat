@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -30,6 +31,7 @@ class ShopFragment : Fragment() {
     private var selectedImageUri: Uri? = null
     private lateinit var patientNameEditText: EditText
     private lateinit var contactNumberEditText: EditText
+    private lateinit var modelOutputTextView: TextView  // Add this line
     private var imageCounter = 0 // Counter to track image selections
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +47,7 @@ class ShopFragment : Fragment() {
 
         patientNameEditText = view.findViewById(R.id.Patient_name)
         contactNumberEditText = view.findViewById(R.id.Contact_number)
+        modelOutputTextView = view.findViewById(R.id.model_output_text)  // Initialize TextView
         val uploadButton: Button = view.findViewById(R.id.upload_button)
 
         uploadButton.setOnClickListener {
@@ -99,7 +102,7 @@ class ShopFragment : Fragment() {
                 selectedImageUri = uri
                 runInference(uri)
             } ?: run {
-                Log.e("ConsultationFragment", "Data is null in onActivityResult")
+                Log.e("ShopFragment", "Data is null in onActivityResult")
                 Toast.makeText(requireContext(), "Failed to get image data", Toast.LENGTH_SHORT).show()
             }
         }
@@ -111,6 +114,8 @@ class ShopFragment : Fragment() {
         val fileChannel: FileChannel = inputStream.channel
         val startOffset: Long = fileDescriptor.startOffset
         val declaredLength: Long = fileDescriptor.declaredLength
+
+        Log.d("ShopFragment", "Model file loaded successfully.") // Log model loading
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
     }
 
@@ -134,32 +139,36 @@ class ShopFragment : Fragment() {
 
         if (bitmap != null) {
             val input = preprocessImage(bitmap)
-            val output = Array(1) { FloatArray(1) }
+            val output = Array(1) { FloatArray(1) }  // Adjust this based on your model output
 
-            tflite.run(input, output)
+            try {
+                Log.d("ShopFragment", "Running inference with input shape: ${input.size} x ${input[0].size} x ${input[0][0].size}")
+                tflite.run(input, output)
 
-            imageCounter++ // Increment image counter on each inference
+                // Assuming output[0][0] gives you a probability between 0 and 1
+                val probability = output[0][0] * 100 // Convert to percentage
+                val message: String
 
-            // Toggle results for the first two images
-            val message = when {
-                imageCounter == 1 -> {
-                    "Positive for cancer" // Force the first image to be positive
+                // Determine the message based on the probability
+                when {
+                    probability >= 50 -> {
+                        message = String.format("%.2f%% matched - please seek consultancy", probability)
+                    }
+                    else -> {
+                        message = "Less than 50% matched - no immediate action needed"
+                    }
                 }
-                imageCounter == 2 -> {
-                    "Negative for cancer" // Force the second image to be negative
-                }
-                imageCounter >= 3 -> {
-                    "Positive for cancer" // Force the final image to always be positive
-                }
-                else -> {
-                    if (output[0][0] >= 0.5) "Positive for cancer" else "Negative for cancer"
-                }
+
+                Log.d("ShopFragment", "Model output: ${output[0][0]}, Probability: $probability") // Log the output
+                modelOutputTextView.text = message  // Set the TextView text
+                Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Log.e("ShopFragment", "Error during inference: ${e.message}")
+                e.printStackTrace() // Print the full stack trace
+                Toast.makeText(requireContext(), "Inference failed: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-
-            Log.d("ConsultationFragment", "Model output: ${output[0][0]}, Counter: $imageCounter")
-            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
         } else {
-            Log.e("ConsultationFragment", "Failed to decode bitmap from input stream")
+            Log.e("ShopFragment", "Failed to decode bitmap from input stream")
             Toast.makeText(requireContext(), "Failed to load image", Toast.LENGTH_SHORT).show()
         }
     }
