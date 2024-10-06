@@ -1,12 +1,13 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -20,295 +21,191 @@
             android:text="Monitoring Symptoms Of \nLung Cancer"
             android:layout_marginBottom="16dp" />
 
-        <TextView
+        <!-- Stage 1 Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Stage 1: Early-Stage Lung Cancer"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+            android:layout_margin="30dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="While early-stage lung cancer often has no symptoms, being alert to certain changes in health can help:"
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:padding="24dp"
+                android:background="@drawable/tips_bg">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1. Low-Dose CT Scans (LDCT):"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Early-Stage Lung Cancer"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="This method can detect small nodules that may indicate early lung cancer."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2. Persistent Cough:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+                    <TextView
+                        android:layout_width="215dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22dp"
+                        android:layout_weight="0.5"
+                        android:text="(0-3 weeks) Early symptoms may not be present, but regular screening can help."
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="A cough that doesn’t go away or worsens over time should be evaluated."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+                    <ImageView
+                        android:id="@+id/imageViewStage1"
+                        android:layout_width="match_parent"
+                        android:layout_weight="0.8"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/xray_first" />
+                </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. Unexplained Weight Loss:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Read More"
+                    android:id="@+id/buttonStage1"
+                    android:textSize="18sp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/lavender"
+                    app:cornerRadius="20dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <TextView
+        <!-- Stage 2 Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Losing weight without trying can be a red flag."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+            android:layout_margin="30dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4. Chest Pain or Discomfort:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:padding="24dp"
+                android:background="@drawable/tips_bg">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Persistent pain that does not go away may warrant further investigation."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Advanced Lung Cancer"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5. Shortness of Breath:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="New or worsening shortness of breath can indicate underlying issues."
-            android:layout_marginBottom="12dp" />
+                    <TextView
+                        android:layout_width="215dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22dp"
+                        android:layout_weight="0.5"
+                        android:text="(4-6 weeks) Symptoms may include a persistent cough, weight loss, and fatigue."
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-        <!-- Stage 2 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stage 2: Middle-Stage Lung Cancer"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+                    <ImageView
+                        android:id="@+id/imageViewStage2"
+                        android:layout_width="match_parent"
+                        android:layout_weight="0.8"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/x_ray_second" />
+                </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1. Increased Coughing:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Read More"
+                    android:id="@+id/buttonStage2"
+                    android:textSize="18sp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/lavender"
+                    app:cornerRadius="20dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <TextView
+        <!-- Stage 3 Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A noticeable increase in cough frequency may indicate irritation or growth in the lungs."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+            android:layout_margin="30dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2. Changes in a Chronic Cough:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:padding="24dp"
+                android:background="@drawable/tips_bg">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Any alteration in a long-standing cough, such as becoming more severe or producing more mucus, can signal disease progression."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Advanced Lung Cancer"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. Chest Pain that Worsens with Deep Breaths or Coughing:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pain that intensifies with breathing or coughing may suggest that a tumor is affecting lung tissues or surrounding areas."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+                    <TextView
+                        android:layout_width="215dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22dp"
+                        android:layout_weight="0.5"
+                        android:text="(7-9 weeks) Symptoms may include severe coughing, chest pain, and difficulty breathing."
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4. Shortness of Breath or Wheezing:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+                    <ImageView
+                        android:id="@+id/imageViewStage3"
+                        android:layout_width="match_parent"
+                        android:layout_weight="0.8"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/xray_third" />
+                </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="New or worsening difficulty breathing can indicate that the cancer is obstructing airways or impacting lung function."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5. Fatigue or Unexplained Weight Loss:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Persistent tiredness and sudden weight loss may reflect the body's response to cancer, including energy depletion and metabolic changes."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Stage 3 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stage 3: Advanced Lung Cancer"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1. Increased shortness of breath or wheezing:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Difficulty breathing or a wheezing sound while exhaling can indicate that the cancer is affecting lung function or blocking airways."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2. Persistent cough that worsens:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="An ongoing cough that becomes more severe may indicate progression of the disease."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. New chest pain:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Experiencing new chest pain that is persistent should be evaluated as it may signify advancing cancer."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4. Swelling in the face or neck:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Swelling may indicate that the cancer is obstructing blood vessels or lymphatic drainage."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5. Recurring respiratory infections:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Frequent infections can suggest that lung function is compromised."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="6. Molecular Testing:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Molecular testing can help identify specific genetic mutations related to the cancer, aiding in targeted therapies."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="7. Participate in Clinical Trials:"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Participating in clinical trials can provide access to new treatments and contribute to cancer research."
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Read More"
+                    android:id="@+id/buttonStage3"
+                    android:textSize="18sp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/lavender"
+                    app:cornerRadius="20dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>

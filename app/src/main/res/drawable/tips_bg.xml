@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/lavender"/> <!-- Set your desired color for the bottom rectangle -->
+            <corners android:radius="40dp"/> <!-- Adjust the corner radius as needed -->
+        </shape>
+    </item>
+    <!-- Bottom Rectangle -->
+    <item android:top="20dp" android:bottom="20dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/lavender"/> <!-- Set your desired color for the bottom rectangle -->
+            <corners android:radius="40dp"/> <!-- Adjust the corner radius as needed -->
+        </shape>
+    </item>
+    <!-- Middle Rectangle -->
+    <item android:top="60dp" android:bottom="20dp"> <!-- Adjust the top and bottom offsets as needed -->
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/> <!-- Set your desired color for the middle rectangle -->
+            <corners android:radius="40dp"/> <!-- Adjust the corner radius as needed -->
+        </shape>
+    </item>
+    <!-- Top Rectangle -->
+    <item android:top="100dp"> <!-- Adjust the top offset as needed -->
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/> <!-- Set your desired color for the top rectangle -->
+            <corners
+                android:topLeftRadius="40dp"
+                android:topRightRadius="40dp"/> <!-- Adjust the corner radius as needed -->
+        </shape>
+    </item>
+</layer-list>

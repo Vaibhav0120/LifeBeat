@@ -48,8 +48,19 @@ class ShopFragment : Fragment() {
         patientNameEditText = view.findViewById(R.id.Patient_name)
         contactNumberEditText = view.findViewById(R.id.Contact_number)
         modelOutputTextView = view.findViewById(R.id.model_output_text)
+
+        // Initialize buttons
+        val uploadButtonMe: Button = view.findViewById(R.id.upload_button_me)
         val uploadButton: Button = view.findViewById(R.id.upload_button)
 
+        // Click listener for the first upload button (no name validation)
+        uploadButtonMe.setOnClickListener {
+            // Just open the image gallery without validating the name
+            saveDataToFirebase() // Optional: If you want to save data regardless
+            openImageGallery()
+        }
+
+        // Click listener for the second upload button (with name validation)
         uploadButton.setOnClickListener {
             if (validateInputs()) {
                 saveDataToFirebase()
@@ -80,13 +91,14 @@ class ShopFragment : Fragment() {
         val patientId = "test1"
         val patientData = Patient(patientId, patientName, contactNumber)
 
-        database.child(patientId).setValue(patientData)
-            .addOnSuccessListener {
-                Toast.makeText(requireContext(), "Data saved successfully", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to save data", Toast.LENGTH_SHORT).show()
-            }
+        // Uncomment if you want to save data
+        // database.child(patientId).setValue(patientData)
+        //     .addOnSuccessListener {
+        //         Toast.makeText(requireContext(), "Data saved successfully", Toast.LENGTH_SHORT).show()
+        //     }
+        //     .addOnFailureListener {
+        //         Toast.makeText(requireContext(), "Failed to save data", Toast.LENGTH_SHORT).show()
+        //     }
     }
 
     private fun openImageGallery() {
