@@ -14,7 +14,7 @@ import com.example.lifebeat.Adapter.TopDoctorAdapter
 import com.example.lifebeat.ViewModel.MainViewModel
 import com.example.lifebeat.databinding.FragmentHomeBinding
 import com.example.lifebeat.ui.DocListActivity
-import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.lifebeat.R
 
 class HomeFragment : Fragment() {
@@ -37,9 +37,9 @@ class HomeFragment : Fragment() {
         initTopDoctors()
 
         // Open ProfileFragment when profile icon is clicked
-//        binding.profileButton.setOnClickListener {
-//            openProfileFragment()
-//        }
+        binding.profileButton.setOnClickListener {
+            openProfileFragment()
+        }
 
         // Move the OnClickListener for seeAllDocList here
         binding.seeAllDocList.setOnClickListener {
@@ -50,13 +50,13 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-//    private fun openProfileFragment() {
-//        // Perform the fragment transaction to open ProfileFragment
-//        val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-//        transaction.replace(R.id.nav_host_fragment_activity_main, ProfileFragment())
-//        transaction.addToBackStack(null) // This ensures back navigation is possible
-//        transaction.commit()
-//    }
+    private fun openProfileFragment() {
+        // Get a reference to the BottomNavigationView in MainActivity
+        val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.nav_view)
+
+        // Simulate a click on the profile item in the navigation bar
+        bottomNav.selectedItemId = R.id.navigation_profile
+    }
 
     private fun initTopDoctors() {
         binding.apply {
