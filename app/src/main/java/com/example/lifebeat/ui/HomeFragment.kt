@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lifebeat.Adapter.CategoryAdapter
 import com.example.lifebeat.Adapter.TopDoctorAdapter
+import com.example.lifebeat.Domain.CategoryModel
 import com.example.lifebeat.ViewModel.MainViewModel
 import com.example.lifebeat.databinding.FragmentHomeBinding
 import com.example.lifebeat.ui.DocListActivity
@@ -82,10 +83,27 @@ class HomeFragment : Fragment() {
                 LinearLayoutManager.HORIZONTAL,
                 false
             )
-            binding.viewCategory.adapter = CategoryAdapter(categoryList)
+            // Pass a lambda function to handle category clicks
+            binding.viewCategory.adapter = CategoryAdapter(categoryList) { category ->
+                onCategorySelected(category)
+            }
             binding.progressBarCategory.visibility = View.GONE
         })
         viewModel.loadCategory()
+    }
+
+    private fun onCategorySelected(category: CategoryModel) {
+        // Filter doctors by selected category and open doctor details or list
+        viewModel.doctors.observe(viewLifecycleOwner, Observer { doctorList ->
+            val filteredDoctors = doctorList.filter { it.categoryId == category.id }
+
+            if (filteredDoctors.isNotEmpty()) {
+                // Start DetailActivity with the first doctor of the selected category
+                val intent = Intent(requireContext(), DetailActivity::class.java)
+                intent.putExtra("Object", filteredDoctors[0]) // Pass the first doctor object
+                startActivity(intent)
+            }
+        })
     }
 
     override fun onDestroyView() {

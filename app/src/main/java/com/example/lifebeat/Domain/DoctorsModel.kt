@@ -15,7 +15,8 @@ data class DoctorsModel(
     val Mobile: String = "",
     val Patients: String = "",
     val Rating: Double = 0.0,
-    val Site: String = ""
+    val Site: String = "",
+    val categoryId: Int = 0  // Add categoryId to link doctor with category
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
@@ -30,6 +31,7 @@ data class DoctorsModel(
         parcel.readString().toString(),
         parcel.readDouble(),
         parcel.readString().toString(),
+        parcel.readInt()  // Read categoryId from Parcel
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -45,6 +47,7 @@ data class DoctorsModel(
         parcel.writeString(Patients)
         parcel.writeDouble(Rating)
         parcel.writeString(Site)
+        parcel.writeInt(categoryId)  // Write categoryId to Parcel
     }
 
     override fun describeContents(): Int {
