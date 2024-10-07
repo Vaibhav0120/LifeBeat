@@ -11,38 +11,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Set up your profile"
-            android:textSize="24sp"
-            android:textColor="#8080FF"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="24dp"/>
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/lavender"
+            android:gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update your profile to connect your doctor with better impression."
+            android:text="Update your profile to connect your doctor with\nbetter impression"
             android:textSize="14sp"
-            android:textColor="#8080FF"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="24dp"/>
+            android:textColor="@color/lavender"
+            android:layout_marginTop="10dp"
+            android:gravity="center"/>
 
-        <androidx.cardview.widget.CardView
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/purple_person"
+            android:layout_marginTop="20dp"/>
+
+        <!-- Use FrameLayout to layer the TextView on top of the rectangle -->
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardBackgroundColor="#8080FF"
-            app:cardElevation="4dp">
+            android:layout_marginTop="20dp">
+
+            <!-- Rectangle view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="650dp"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/rectangle" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="395dp"
-                android:layout_marginTop="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -52,7 +65,8 @@
                     android:layout_marginBottom="16dp"
                     android:text="Personal information"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -139,7 +153,7 @@
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </FrameLayout>
 
     </LinearLayout>
 

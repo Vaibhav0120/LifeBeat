@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.HomeFragment"
+    android:layout_marginTop="18dp">
 
     <ImageView
         android:layout_width="58dp"
