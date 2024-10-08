@@ -33,29 +33,29 @@
             android:gravity="center"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/purple_person"
-            android:layout_marginTop="20dp"/>
+            android:layout_width="167dp"
+            android:layout_height="151dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/person_icon" />
 
         <!-- Use FrameLayout to layer the TextView on top of the rectangle -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="23dp">
 
             <!-- Rectangle view -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/profile_purple_rectangle" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -121,6 +121,25 @@
                         android:hint="Date of birth"
                         android:inputType="date"
                         android:text="10/01/2006" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Blood Group"
+                        android:inputType="text"
+                        android:text="B+" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

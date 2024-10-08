@@ -79,7 +79,7 @@
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
                 android:hint="Patient Name"
-                android:drawableLeft="@drawable/person_icon_black"
+                android:drawableLeft="@drawable/person"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
 
