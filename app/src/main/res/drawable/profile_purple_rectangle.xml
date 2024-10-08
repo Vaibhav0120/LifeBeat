@@ -8,7 +8,7 @@
                 android:endColor="@color/lavender"
                 android:angle="0"/>
             <corners
-                android:radius="50dp"/>
+                android:topRightRadius="20dp" android:topLeftRadius="20dp"/>
         </shape>
     </item>
 

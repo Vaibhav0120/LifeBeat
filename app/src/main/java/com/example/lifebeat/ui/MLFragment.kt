@@ -43,7 +43,7 @@ class ShopFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_shop, container, false)
+        val view = inflater.inflate(R.layout.fragment_ml, container, false)
 
         patientNameEditText = view.findViewById(R.id.Patient_name)
         contactNumberEditText = view.findViewById(R.id.Contact_number)

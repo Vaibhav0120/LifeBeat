@@ -42,14 +42,14 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="60dp">
 
             <!-- Rectangle view -->
             <View
                 android:layout_width="match_parent"
-                android:layout_height="650dp"
+                android:layout_height="500dp"
                 android:layout_marginTop="70dp"
-                android:background="@drawable/rectangle" />
+                android:background="@drawable/profile_purple_rectangle" />
 
 
             <LinearLayout
@@ -145,6 +145,7 @@
                     android:id="@+id/logoutButton"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
                     android:backgroundTint="@color/white"
                     android:text="Logout"
                     android:textSize="18sp"

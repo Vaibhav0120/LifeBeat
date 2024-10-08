@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:layout_marginBottom="30dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -130,7 +131,7 @@
                         android:layout_weight="0.8"
                         android:layout_height="match_parent"
                         android:layout_marginTop="15dp"
-                        android:src="@drawable/x_ray_second" />
+                        android:src="@drawable/xray_second" />
                 </LinearLayout>
 
                 <Button
