@@ -3,7 +3,7 @@
 <h3 align="center">Welcome to LifeBeat, an innovative healthcare application that helps users detect a specific type of lung cancer using chest X-rays. LifeBeat simplifies healthcare by integrating advanced cancer detection technology and providing users with tools to book appointments with doctors.</h3>
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/68efd9eb-0e63-43b2-b4ec-6eb6385a482d" width="70%" alt="Hackstreet Certificate"/> 
+    <img src="https://github.com/user-attachments/assets/68efd9eb-0e63-43b2-b4ec-6eb6385a482d" width="50%" alt="Cancer Care"/> 
 </p>
 
 <h3 align="center">The app was developed by the team <strong>Error 404</strong> during the <strong>HackStreet Hackathon</strong>, where we proudly secured the 2nd Runner-Up position. This README will guide you through the app’s features, current functionalities, and our roadmap for future enhancements.</h3>
