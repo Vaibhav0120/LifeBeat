@@ -1,83 +1,91 @@
-# LifeBeat - Lung Cancer Detection & Health Companion
+<h1 align="center">LifeBeat - Lung Cancer Detection & Health Companion</h1>
 
-Welcome to **LifeBeat**, an innovative healthcare application that helps users detect a specific type of lung cancer using chest X-rays. LifeBeat simplifies healthcare by integrating advanced cancer detection technology and providing users with tools to book appointments with doctors.
+<h3 align="center">Welcome to LifeBeat, an innovative healthcare application that helps users detect a specific type of lung cancer using chest X-rays. LifeBeat simplifies healthcare by integrating advanced cancer detection technology and providing users with tools to book appointments with doctors.</h3>
 
-The app was developed by the team **Error 404** during the **HackStreet Hackathon**, where we proudly secured the 2nd Runner-Up position. This README will guide you through the app’s features, current functionalities, and our roadmap for future enhancements.
+<br>
 
----
+<h3 align="center">The app was developed by the team <strong>Error 404</strong> during the <strong>HackStreet Hackathon</strong>, where we proudly secured the 2nd Runner-Up position. This README will guide you through the app’s features, current functionalities, and our roadmap for future enhancements.</h3>
 
-## Features
+<br>
 
-### 1. **Lung Cancer Detection**
-- LifeBeat leverages a TensorFlow Lite (TFLite) model to analyze chest X-rays and detect a specific type of lung cancer.
-- Users can upload chest X-rays for quick, reliable, and accurate diagnosis, aiding in early detection and timely medical intervention.
+<h2 align="center"> Features</h2>
 
-### 2. **Book Appointments**
-- LifeBeat allows users to book appointments with specialists directly through the app.
-- The easy-to-use appointment system simplifies the process of connecting with healthcare professionals.
+<h4>1. <strong>Lung Cancer Detection</strong></h4>
+<ul>
+    <li>LifeBeat leverages a TensorFlow Lite (TFLite) model to analyze chest X-rays and detect a specific type of lung cancer.</li>
+    <li>Users can upload chest X-rays for quick, reliable, and accurate diagnosis, aiding in early detection and timely medical intervention.</li>
+</ul>
 
----
+<h4>2. <strong>Book Appointments</strong></h4>
+<ul>
+    <li>LifeBeat allows users to book appointments with specialists directly through the app.</li>
+    <li>The easy-to-use appointment system simplifies the process of connecting with healthcare professionals.</li>
+</ul>
 
-## Future Plans
+<br>
 
-1. **Expanding Disease Detection**
-   - Enhancements to our TFLite model will allow LifeBeat to detect additional types of diseases beyond lung cancer.
-   - Continuous improvement in detection accuracy and expanding the scope of healthcare services.
+<h2 align="center">Future Plans</h2>
 
-2. **Chatbot Integration**
-   - A smart chatbot will be integrated to suggest doctors based on users' symptoms, providing a personalized and guided experience.
+<ul>
+    <li><strong>Expanding Disease Detection:</strong> Enhancements to our TFLite model will allow LifeBeat to detect additional types of diseases beyond lung cancer. Continuous improvement in detection accuracy and expanding the scope of healthcare services.</li>
+    <li><strong>Chatbot Integration:</strong> A smart chatbot will be integrated to suggest doctors based on users' symptoms, providing a personalized and guided experience.</li>
+    <li><strong>Pharmacy Integration:</strong> LifeBeat will include a pharmacy section, enabling users to order medicines directly through the app, creating an all-in-one healthcare platform.</li>
+</ul>
 
-3. **Pharmacy Integration**
-   - LifeBeat will include a pharmacy section, enabling users to order medicines directly through the app. This will create an all-in-one healthcare platform, eliminating the need for multiple apps.
+<br>
 
----
+<h2 align="center">Screenshots</h2>
 
-## Screenshots
-
-<p float="left" align="center">
-    <img src="https://github.com/user-attachments/assets/de7f5687-e63b-4a00-b1d9-c2e221b72c18" Width="240px"/>
-    <img src="https://github.com/user-attachments/assets/533f2523-1b11-43f8-acbd-05104c9e5215" Width="240px"/> 
-    <img src="https://github.com/user-attachments/assets/569f641a-bce8-4599-ae71-dcb8eca67eac" Width="240px"/>
-    <img src="https://github.com/user-attachments/assets/3c697deb-14b7-4a4d-9d8d-71c8897784eb" Width="240px"/>
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/de7f5687-e63b-4a00-b1d9-c2e221b72c18" width="240px" alt="LifeBeat screenshot 1"/>
+    <img src="https://github.com/user-attachments/assets/533f2523-1b11-43f8-acbd-05104c9e5215" width="240px" alt="LifeBeat screenshot 2"/>
+    <img src="https://github.com/user-attachments/assets/569f641a-bce8-4599-ae71-dcb8eca67eac" width="240px" alt="LifeBeat screenshot 3"/>
+    <img src="https://github.com/user-attachments/assets/3c697deb-14b7-4a4d-9d8d-71c8897784eb" width="240px" alt="LifeBeat screenshot 4"/>
 </p>
 
----
+<br>
 
-## How to Use
+<h2 align="center">How to Use</h2>
 
-1. **Install the App**:
-2. **Sign Up**: Create an account and complete your profile.
-3. **Upload X-ray**: Go to the detection section and upload your chest X-ray.
-4. **View Results**: LifeBeat will analyze the X-ray and provide results.
-5. **Book an Appointment**: Schedule an appointment with a doctor from within the app.
-6. **Stay Tuned for Updates**: As we roll out more features, LifeBeat will evolve into a comprehensive healthcare solution.
+<ol>
+    <li><strong>Install the App</strong>: [App Store / Google Play link]</li>
+    <li><strong>Sign Up</strong>: Create an account and complete your profile.</li>
+    <li><strong>Upload X-ray</strong>: Go to the detection section and upload your chest X-ray.</li>
+    <li><strong>View Results</strong>: LifeBeat will analyze the X-ray and provide results.</li>
+    <li><strong>Book an Appointment</strong>: Schedule an appointment with a doctor from within the app.</li>
+    <li><strong>Stay Tuned for Updates</strong>: As we roll out more features, LifeBeat will evolve into a comprehensive healthcare solution.</li>
+</ol>
 
----
+<br>
 
-## Technologies Used
+<h2 align="center">Technologies Used</h2>
 
-- **Front-End**: XML (for designing the user interface)
-- **Back-End**: Kotlin (for backend logic and integration)
-- **Machine Learning**: TensorFlow Lite (TFLite) for on-device X-ray analysis and cancer detection
-- **Database**: Firebase Firestore for real-time data management
-- **APIs**: Firebase Auth for user authentication, Google Cloud Healthcare API for secure data handling
+<ul>
+    <li><strong>Front-End:</strong> XML (for designing the user interface)</li>
+    <li><strong>Back-End:</strong> Kotlin (for backend logic and integration)</li>
+    <li><strong>Machine Learning:</strong> TensorFlow Lite (TFLite) for on-device X-ray analysis and cancer detection</li>
+    <li><strong>Database:</strong> Firebase Firestore for real-time data management</li>
+    <li><strong>APIs:</strong> Firebase Auth for user authentication, Google Cloud Healthcare API for secure data handling</li>
+</ul>
 
----
+<br>
 
-## Contribution
+<h2 align="center">Contribution</h2>
 
-We welcome contributions! Feel free to submit a pull request or open an issue if you have suggestions for improvements or features.
+<p align="center">We welcome contributions! Feel free to submit a pull request or open an issue if you have suggestions for improvements or features.</p>
 
----
+<br>
 
-## Team **Error 404**
-- Vaibhav Sharma
-- Harsh Kaushik
-- Samarpita Das
-- Ritika
+<h2 align="center">Team <strong>Error 404</strong></h2>
+<ul>
+    <li>Vaibhav Sharma</li>
+    <li>Harsh Kaushik</li>
+    <li>Samarpita Das</li>
+    <li>Ritika</li>
+</ul>
 
-This project was developed during the **HackStreet Hackathon 2024**, where we earned the 2nd Runner-Up position.
+<p align="center">This project was developed during the <strong>HackStreet Hackathon 2024</strong>, where we earned the 2nd Runner-Up position.</p>
 
----
+<br>
 
-Thank you for your interest in **LifeBeat**! Stay connected for updates as we continue to enhance and expand the app's capabilities.
+<h3 align="center">Thank you for your interest in <strong>LifeBeat</strong>! Stay connected for updates as we continue to enhance and expand the app's capabilities.</h3>
