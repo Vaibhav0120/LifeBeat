@@ -26,11 +26,24 @@
 
 <h2 align="center">Future Plans</h2>
 
+<h4>1. <strong>Expanding Disease Detection</strong></h4>
 <ul>
-    <li><strong>Expanding Disease Detection:</strong> Enhancements to our TFLite model will allow LifeBeat to detect additional types of diseases beyond lung cancer. Continuous improvement in detection accuracy and expanding the scope of healthcare services.</li>
-    <li><strong>Chatbot Integration:</strong> A smart chatbot will be integrated to suggest doctors based on users' symptoms, providing a personalized and guided experience.</li>
-    <li><strong>Pharmacy Integration:</strong> LifeBeat will include a pharmacy section, enabling users to order medicines directly through the app, creating an all-in-one healthcare platform.</li>
+    <li>Enhancements to our TFLite model will allow LifeBeat to detect additional types of diseases beyond lung cancer.</li>
+    <li>Continuous improvement in detection accuracy and expanding the scope of healthcare services.</li>
 </ul>
+
+<h4>2. <strong>Chatbot Integration</strong></h4>
+<ul>
+    <li>A smart chatbot will be integrated to suggest doctors based on users' symptoms.</li>
+    <li>This will provide a personalized and guided healthcare experience.</li>
+</ul>
+
+<h4>3. <strong>Pharmacy Integration</strong></h4>
+<ul>
+    <li>LifeBeat will include a pharmacy section, enabling users to order medicines directly through the app.</li>
+    <li>This will create an all-in-one healthcare platform, eliminating the need for multiple apps.</li>
+</ul>
+
 
 <br>
 
