@@ -86,6 +86,10 @@
 
 <p align="center">This project was developed during the <strong>HackStreet Hackathon 2024</strong>, where we earned the 2nd Runner-Up position.</p>
 
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/f41d9b00-248f-4051-b66c-ca6bc1a2c895" width="70%" alt="Hackstreet Certificate"/> 
+</p>
+
 <br>
 
 <h3 align="center">Thank you for your interest in <strong>LifeBeat</strong>! Stay connected for updates as we continue to enhance and expand the app's capabilities.</h3>
