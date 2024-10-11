@@ -36,9 +36,9 @@ The app was developed by the team **Error 404** during the **HackStreet Hackatho
 
 <p float="left" align="center">
     <img src="https://github.com/user-attachments/assets/de7f5687-e63b-4a00-b1d9-c2e221b72c18" Width="250px"/>
-    <img src="https://github.com/user-attachments/assets/533f2523-1b11-43f8-acbd-05104c9e5215"/> 
-    <img src="https://github.com/user-attachments/assets/569f641a-bce8-4599-ae71-dcb8eca67eac"/>
-    <img src="https://github.com/user-attachments/assets/3c697deb-14b7-4a4d-9d8d-71c8897784eb"/>
+    <img src="https://github.com/user-attachments/assets/533f2523-1b11-43f8-acbd-05104c9e5215" Width="250px"/> 
+    <img src="https://github.com/user-attachments/assets/569f641a-bce8-4599-ae71-dcb8eca67eac" Width="250px"/>
+    <img src="https://github.com/user-attachments/assets/3c697deb-14b7-4a4d-9d8d-71c8897784eb" Width="250px"/>
 </p>
 
 ---
