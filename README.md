@@ -1,6 +1,6 @@
 <h1 align="center">LifeBeat - Lung Cancer Detection & Health Companion</h1>
 
-<h3 align="center">Welcome to LifeBeat, an innovative healthcare application that helps users detect a specific type of lung cancer using chest X-rays. LifeBeat simplifies healthcare by integrating advanced cancer detection technology and providing users with tools to book appointments with doctors.</h3>
+<h3 align="center">Welcome to LifeBeat, an innovative healthcare application that helps users detect a specific type [IQ-OTHNCCD] of lung cancer using chest X-rays. LifeBeat simplifies healthcare by integrating advanced cancer detection technology and providing users with tools to book appointments with doctors.</h3>
 
 <p align="center">
     <img src="https://github.com/user-attachments/assets/68efd9eb-0e63-43b2-b4ec-6eb6385a482d" width="50%" alt="Cancer Care"/> 
@@ -63,7 +63,7 @@
 <h2 align="center">How to Use</h2>
 
 <ol>
-    <li><strong>Install the App</strong>: [App Store / Google Play link]</li>
+    <li><strong>Install the App</strong>:</li>
     <li><strong>Sign Up</strong>: Create an account and complete your profile.</li>
     <li><strong>Upload X-ray</strong>: Go to the detection section and upload your chest X-ray.</li>
     <li><strong>View Results</strong>: LifeBeat will analyze the X-ray and provide results.</li>
