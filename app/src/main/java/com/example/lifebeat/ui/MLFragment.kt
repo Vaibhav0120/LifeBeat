@@ -17,6 +17,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.lifebeat.R
 import com.google.firebase.database.FirebaseDatabase
@@ -26,7 +27,7 @@ import java.io.InputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 
-class ShopFragment : Fragment() {
+class MLFragment : Fragment() {
     private lateinit var tflite: Interpreter
     private var selectedImageUri: Uri? = null
     private lateinit var patientNameEditText: EditText
@@ -52,6 +53,7 @@ class ShopFragment : Fragment() {
         // Initialize buttons
         val uploadButtonMe: Button = view.findViewById(R.id.upload_button_me)
         val uploadButton: Button = view.findViewById(R.id.upload_button)
+        val BookAppointmentBtn: CardView = view.findViewById(R.id.Book_Appointment_Btn)
 
         // Click listener for the first upload button (no name validation)
         uploadButtonMe.setOnClickListener {
@@ -66,6 +68,12 @@ class ShopFragment : Fragment() {
                 saveDataToFirebase()
                 openImageGallery()
             }
+        }
+
+        // Click listener for the new button to open a specific activity
+        BookAppointmentBtn.setOnClickListener {
+            val intent = Intent(requireContext(), DocListActivity::class.java)
+            startActivity(intent)
         }
 
         return view

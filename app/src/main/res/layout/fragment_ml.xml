@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/upload_bg"
-    tools:context=".ui.ShopFragment">
+    tools:context=".ui.MLFragment">
 
 
     <androidx.cardview.widget.CardView
@@ -119,6 +119,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/Book_Appointment_Btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

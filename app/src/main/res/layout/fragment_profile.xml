@@ -19,7 +19,7 @@
             android:text="Set up your profile"
             android:textStyle="bold"
             android:textSize="30sp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/lavender"
             android:gravity="center"/>
 
@@ -47,15 +47,15 @@
             <!-- Rectangle view -->
             <View
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginTop="60dp"
+                android:layout_height="580dp"
+                android:layout_marginTop="0dp"
                 android:background="@drawable/profile_purple_rectangle" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -65,7 +65,7 @@
                     android:layout_marginBottom="16dp"
                     android:text="Personal information"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -164,7 +164,7 @@
                     android:id="@+id/logoutButton"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="6dp"
                     android:backgroundTint="@color/white"
                     android:text="Logout"
                     android:textSize="18sp"

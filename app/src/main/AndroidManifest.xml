@@ -53,7 +53,7 @@
 
         <!-- ShopFragment -->
         <activity
-            android:name=".ui.ShopFragment"
+            android:name=".ui.MLFragment"
             android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
