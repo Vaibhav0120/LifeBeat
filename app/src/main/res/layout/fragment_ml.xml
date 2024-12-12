@@ -9,7 +9,6 @@
     android:background="@drawable/upload_bg"
     tools:context=".ui.MLFragment">
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,13 +35,32 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Upload"
+                android:text="Upload X-RAY"
                 android:id="@+id/upload_button_me"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/lavender"
                 app:cornerRadius = "20dp"/>
         </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/prediction_result_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="30dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/prediction_result_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -99,20 +117,12 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Upload"
+                android:text="Upload X-RAY"
                 android:id="@+id/upload_button"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/lavender"
                 app:cornerRadius = "20dp"/>
-
-            <TextView
-                android:id="@+id/model_output_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_marginTop="16dp"/>
-
 
         </LinearLayout>
 
@@ -144,5 +154,4 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>

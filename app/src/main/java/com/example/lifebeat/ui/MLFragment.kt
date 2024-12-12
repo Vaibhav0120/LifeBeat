@@ -32,7 +32,8 @@ class MLFragment : Fragment() {
     private var selectedImageUri: Uri? = null
     private lateinit var patientNameEditText: EditText
     private lateinit var contactNumberEditText: EditText
-    private lateinit var modelOutputTextView: TextView
+    private lateinit var predictionResultCard: CardView
+    private lateinit var predictionResultText: TextView
     private var imageCounter = 0 // Counter to track image selections
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +49,8 @@ class MLFragment : Fragment() {
 
         patientNameEditText = view.findViewById(R.id.Patient_name)
         contactNumberEditText = view.findViewById(R.id.Contact_number)
-        modelOutputTextView = view.findViewById(R.id.model_output_text)
+        predictionResultCard = view.findViewById(R.id.prediction_result_card)
+        predictionResultText = view.findViewById(R.id.prediction_result_text)
 
         // Initialize buttons
         val uploadButtonMe: Button = view.findViewById(R.id.upload_button_me)
@@ -121,7 +123,7 @@ class MLFragment : Fragment() {
                 selectedImageUri = uri
                 runInference(uri)
             } ?: run {
-                Log.e("ShopFragment", "Data is null in onActivityResult")
+                Log.e("MLFragment", "Data is null in onActivityResult")
                 Toast.makeText(requireContext(), "Failed to get image data", Toast.LENGTH_SHORT).show()
             }
         }
@@ -134,7 +136,7 @@ class MLFragment : Fragment() {
         val startOffset: Long = fileDescriptor.startOffset
         val declaredLength: Long = fileDescriptor.declaredLength
 
-        Log.d("ShopFragment", "Model file loaded successfully.")
+        Log.d("MLFragment", "Model file loaded successfully.")
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
     }
 
@@ -158,34 +160,47 @@ class MLFragment : Fragment() {
 
         if (bitmap != null) {
             val input = preprocessImage(bitmap)
-            val output = Array(1) { FloatArray(3) }  // Adjusted to match the model's output shape
+            val output = Array(1) { FloatArray(3) }
 
             try {
-                Log.d("ShopFragment", "Running inference with input shape: ${input.size} x ${input[0].size} x ${input[0][0].size}")
+                Log.d("MLFragment", "Running inference with input shape: ${input.size} x ${input[0].size} x ${input[0][0].size}")
                 tflite.run(input, output)
 
-                // Handle the output probabilities
-                val probabilities = output[0] // Get the probabilities for each class
+                val probabilities = output[0]
                 val maxProbability = probabilities.maxOrNull() ?: 0f
-                val maxIndex = probabilities.toList().indexOf(maxProbability) // Convert to List for indexOf
+                val maxIndex = probabilities.toList().indexOf(maxProbability)
 
                 val message: String
-                when (maxIndex) {
-                    0 -> message = String.format("%.2f%% matched - seek immediate assistance required", maxProbability * 100)
-                    1 -> message = String.format("%.2f%% matched - seek assistance required", maxProbability * 100)
-                    2 -> message = String.format("%.2f%% matched - You do not need to worry required ", (maxProbability * 100)-50)
-                    else -> message = "Unknown classification"
+                val backgroundColor: Int
+                val percentage = maxProbability * 100
+
+                when {
+                    percentage > 90 -> {
+                        message = String.format("%.2f%% matched - seek immediate assistance", percentage)
+                        backgroundColor = Color.RED
+                    }
+                    percentage < 40 -> {
+                        message = String.format("%.2f%% matched - You do not need to worry", percentage)
+                        backgroundColor = Color.GREEN
+                    }
+                    else -> {
+                        message = String.format("%.2f%% matched - seek assistance", percentage)
+                        backgroundColor = Color.rgb(255, 165, 0) // Orange
+                    }
                 }
 
-                Log.d("ShopFragment", "Model output: ${probabilities.joinToString(", ")}, Max Probability: $maxProbability")
-                modelOutputTextView.text = message
+                Log.d("MLFragment", "Model output: ${probabilities.joinToString(", ")}, Max Probability: $maxProbability")
+                predictionResultText.text = message
+                predictionResultCard.setCardBackgroundColor(backgroundColor)
+                predictionResultCard.visibility = View.VISIBLE
+
                 Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
-                Log.e("ShopFragment", "Error during inference: ${e.message}", e)
+                Log.e("MLFragment", "Error during inference: ${e.message}", e)
                 Toast.makeText(requireContext(), "Inference failed: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         } else {
-            Log.e("ShopFragment", "Failed to decode bitmap from input stream")
+            Log.e("MLFragment", "Failed to decode bitmap from input stream")
             Toast.makeText(requireContext(), "Failed to load image", Toast.LENGTH_SHORT).show()
         }
     }

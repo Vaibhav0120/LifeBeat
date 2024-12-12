@@ -51,10 +51,11 @@
             android:name=".ui.DocListActivity"
             android:exported="false" />
 
-        <!-- ShopFragment -->
+        <!-- MLFragment -->
         <activity
             android:name=".ui.MLFragment"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
