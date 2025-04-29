@@ -52,11 +52,15 @@
 <h2 align="center">Screenshots</h2>
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/de7f5687-e63b-4a00-b1d9-c2e221b72c18" width="230px" alt="LifeBeat screenshot 1"/>
-    <img src="https://github.com/user-attachments/assets/533f2523-1b11-43f8-acbd-05104c9e5215" width="230px" alt="LifeBeat screenshot 2"/>
-    <img src="https://github.com/user-attachments/assets/569f641a-bce8-4599-ae71-dcb8eca67eac" width="230px" alt="LifeBeat screenshot 3"/>
-    <img src="https://github.com/user-attachments/assets/ac8b10ff-faaa-440a-96d2-d2e43a7e9d20" width="230px" alt="LifeBeat screenshot 4"/>
+  <img src="https://github.com/user-attachments/assets/de7f5687-e63b-4a00-b1d9-c2e221b72c18" width="230px" alt="LifeBeat screenshot 1"/>
+  <img src="https://github.com/user-attachments/assets/533f2523-1b11-43f8-acbd-05104c9e5215" width="230px" alt="LifeBeat screenshot 2"/>
 </p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/569f641a-bce8-4599-ae71-dcb8eca67eac" width="230px" alt="LifeBeat screenshot 3"/>
+  <img src="https://github.com/user-attachments/assets/ac8b10ff-faaa-440a-96d2-d2e43a7e9d20" width="230px" alt="LifeBeat screenshot 4"/>
+</p>
+
 
 <br>
 
