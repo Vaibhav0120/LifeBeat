@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.lifebeat"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.lifebeat"
@@ -66,4 +66,9 @@ dependencies {
 
     // Apple Sign-In
     // implementation("com.apple.android:apple-authentication:1.0.0") // Apple
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
